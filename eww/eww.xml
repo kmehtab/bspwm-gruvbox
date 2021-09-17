@@ -59,7 +59,7 @@
     <variables>
         <!-- DATE VARS -->
         <script-var name="minute" interval="10s">date "+%M"</script-var>
-        <script-var name="hour" interval="5m">date "+%H"</script-var>
+        <script-var name="hour" interval="5m">date "+""%I"</script-var>
         <script-var name="day" interval="12h">~/.config/eww/scripts/getDay</script-var>
 
         <!-- SYSTEM INFO VAR -->
@@ -70,31 +70,31 @@
 
     <windows>
         <window name="triangle">
-            <geometry x="1292px" y="15px" width="70px" height="70px"/>
+            <geometry x="1848px" y="15px" width="70px" height="70px"/>
             <widget>
                 <triangle/>
             </widget>
         </window>
         <window name="eww-window">
-            <geometry x="1020px" y="53px" width="330px" height="445px"/>
+            <geometry x="1575px" y="53px" width="330px" height="445px"/>
             <widget>
                 <eww-window/>
             </widget>
         </window>
         <window name="date">
-            <geometry x="1030px" y="75px" width="310px" height="100px"/>
+            <geometry x="1585px" y="75px" width="310px" height="100px"/>
             <widget>
                 <date/>
             </widget>
         </window>
         <window name="layout-manager">
-            <geometry x="1030px" y="220px" width="310px" height="20px"/>
+            <geometry x="1585px" y="220px" width="310px" height="20px"/>
             <widget>
                 <layout-manager/>
             </widget>
         </window>
         <window name="system-manager">
-            <geometry x="1030px" y="270px" width="310px" height="160px"/>
+            <geometry x="1585px" y="270px" width="310px" height="160px"/>
             <widget>
                 <system-manager/>
             </widget>

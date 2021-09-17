@@ -114,19 +114,19 @@ XF86AudioPlay
 	playerctl play-pause
 
 # Manage volume
-XF86AudioRaiseVolume
+F6 
     amixer -q set Master 5%+ ; ~/.config/polybar/scripts/volume.sh
 
-XF86AudioLowerVolume
+F5
     amixer -q set Master 5%- ; ~/.config/polybar/scripts/volume.sh
 
-XF86AudioMute
+f7
     amixer set Master toggle ; ~/.config/polybar/scripts/volume.sh
 
 # Manage brightness
-XF86MonBrightnessUp
-    brightnessctl set 5%+ ; ~/.config/polybar/scripts/volume.sh
+super + F12
+    brightnessctl set 3%+ ; ~/.config/polybar/scripts/volume.sh
    
-XF86MonBrightnessDown
-    brightnessctl set 5%- ; ~/.config/polybar/scripts/volume.sh
+super + F11
+    brightnessctl set 3%- ; ~/.config/polybar/scripts/volume.sh
    

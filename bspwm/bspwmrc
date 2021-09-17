@@ -19,6 +19,7 @@ $HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --experimental-backends --backend glx -b &
 #feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper"
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nitrogen --restore
 sh $HOME/.config/polybar/launch.sh
 

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+rofi -no-lazy-grab \
+-disable-history \
+-modi "drun" -show drun \
+-columns 1 \
+-lines 8 \
+-line-padding 10 \
+-padding 20 \
+-width 27 \
+-location 1 \
+-font "CaskaydiaCove Nerd Font 8" \
+-theme ~/.config/rofi/appmnu.rasi \
+-xoffset 15 -yoffset +53 \
