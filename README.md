@@ -2,8 +2,8 @@
 
 ## Previews
 ![bspwm](previews/home.png)
-![bspwm](previews/bspwm.png)
 ![eww](previews/eww.png)
+![bspwm](previews/bspwm.png)
 
 ## Programs
 * rofi
