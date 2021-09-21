@@ -30,7 +30,7 @@ xset r rate 250 40
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-rule alacritty                 			desktop=^1
+rule alacritty                      desktop=^1
 rule discord                        desktop=^2
 rule code                           desktop=^3
 
