@@ -1,165 +1,174 @@
-// This is literally messy as fuck.
-// Please make a PR if your eyes are bleeding :)
+// gruvbox u///u
+$background: #282828;
+$background-dark: #1d2021;
+$background-light: #928374;
+$yellow: #d79921;
+$gray-1: #3c3836;
+$gray-2: #504945;
 
 * {
-    all: unset;
+  border-radius: 10px;
+  font-family: "FontAwesome";
+  font-size: 16px;
+  border: none;
 }
 
 window {
-    color: #d5c4a1;
-    font-family: "CaskaydiaCove Nerd Font";
+  // background-color: $background-dark;
+  background-color: transparent;
 }
 
-button:hover {
-    color: #89B8C2;
+.settings-panel {
+  background-color: $background-dark;
 }
 
-.eww-window, .layout-manager, .system-manager {
-    border-radius: 10px;
+.daily {
+  padding: 10px;
 }
 
-.triangle, .date {
-    background-color: transparent;
+.daily-date {
+  background-color: $background;
+  padding: 10px 20px;
 }
 
-.eww-window {
-    background-color: #1D2021;
+.daily-date-day {
+  color: $yellow;
 }
 
-.layout-manager, .system-manager {
-    background-color: #282828;
-    margin-left: 5px;
-    margin-right: 5px;
+.daily-weather {
+  background-color: $background;
+  margin: 0 0 0 10px;
+  padding: 10px 35px;
 }
 
-.layout-manager {
-    background-color: transparent;
-    margin-top: -25px;
+
+.volume {
+  background-color: $background;
+  margin: 10px;
 }
 
-// TRIANGLE
-
-.tr-text {
-    font-size: 26px;
-    color: #1D2021;
+.volume-scale trough highlight {
+  all: unset;
+  background-color: $yellow;
+  padding: 3px;
+  border-radius: inherit;
 }
 
-// DATE
-
-.time {
-    margin: 15px 75px -20px 75px;
-    font-size: 50px;
-    color: #d5c4a1;
+.volume-down, .volume-up {
+  padding: 10px 20px;
 }
 
-.semicolon {
-    margin: 0px;
-    margin-top: -5px;
-    color: #282828;
+
+.brightness {
+  background-color: $background;
+  margin: 10px;
 }
 
-.day {
-    margin-top: 25px;
-    margin-bottom: 20px;
-
-    font-size: 16px;
-    font-weight: bold;
-    color: #83a598;
+.brightness-scale trough highlight {
+  all: unset;
+  background-color: $yellow;
+  padding: 3px;
+  border-radius: inherit;
 }
 
-// LAYOUT MANAGER
-
-.layout-btn button {
-    font-family: "Material Icons";
-    font-size: 27px;
-
-    margin: 30px;
-    margin-left: 7px;
-    margin-right: 7px;
+.brightness-down, .brightness-up {
+  padding: 10px 20px;
 }
 
-// SYSTEM MANAGER
 
-.system-manager slider {
-    all: unset;
+
+.spotify {
+  background-color: $background;
+  margin: 10px;
+  padding: 10px;
 }
 
-.label-ram-bar, .label-vol-bar, .label-brightness-bar {
-    font-size: 23px;
-    font-family: "Material Icons";
-
-    margin-top: 12px;
-    margin-left: -35px;
+.spotify-box {
+  padding: 0 20px;
 }
 
-.label-ram-bar {
-    margin-top: 25px;
-    margin-left: -62px;
-    font-size: 27px;
-    color: #fb4939;
+.spotify-text {
+  margin-left: 10px;
 }
 
-.label-brightness-bar {
-    margin-left: -64px;
-    color: #B8BB26;
+.spotify-controls button {
+  all: unset;
+  background-color: transparent;
+  border-radius: inherit;
 }
 
-.label-vol-bar {
-    margin-left: -64px;
-    color: #FABD2F;
+
+
+.close-me {
+  all: unset;
+  background-color: transparent;
 }
 
-.ram-bar scale trough highlight {
-    all: unset;
-    background-image: linear-gradient(to right, #fb4939, #EA6962);
-	color: #000000;
-	border-radius: 10px;
+.close-me-container {
+  background-color: transparent;
 }
 
-.brightness-bar scale trough highlight {
-    all: unset;
-    background-image: linear-gradient(to right, #B8BB26, #A9B665);
-    color: #000000;
-    border-radius: 10px;
 
+
+.system-menu-icon {
+  all: unset;
+  font-family: "Material Design Icons Desktop";
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: inherit;
 }
 
-.vol-bar scale trough highlight {
-    all: unset;
-    background-image: linear-gradient(to right, #FABD2F, #FFC745);
-    color: #000000;
-    border-radius: 10px;
 
+
+.notifications {
+  background-color: $background-dark;
+  padding: 15px 0;
 }
 
-.ram-bar scale trough {
-	all: unset;
-	background-color: #32302f;
-	border-radius: 50px;
-
-	min-height: 5px;
-    min-width: 150px;
-
-    margin: 25px 40px 0px -65px;
+.notification-wrapper {
+  background-color: $gray-1;
+  margin: 5px 10px;
+  padding: 5px;
+  border-radius: 4px;
 }
 
-.vol-bar scale trough, .brightness-bar scale trough {
-	all: unset;
-	background-color: #32302f;
-	border-radius: 50px;
-
-	min-height: 5px;
-    min-width: 150px;
-
-    margin: 10px 40px 0px -65px;
+.notification-title,
+.notification-content {
+  margin: 2px;
 }
 
-.powermenu-btn button {
-    font-family: "Material Icons";
-    font-size: 30px;
-
-    margin: 23px;
-    margin-left: 7px;
-    margin-right: 7px;
-    padding: 0px 15px 0px 15px;
+.notification-title {
+  margin: 0 4px;
+  font-size: 23px;
+  font-weight: bold;
 }
+
+.notification-wrapper:nth-child(2n) {
+  background-color: $gray-2;
+}
+
+.notification-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+  opacity: 0.5;
+}
+
+.notification-toggle.active {
+  opacity: 1;
+}
+
+.notification-clean {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.notifications-empty {
+  margin: 10px 0;
+  font-size: 24px;
+}
+

@@ -1,6 +1,6 @@
-# ##############################################################################
-# #                                   KEYBINDS                                 #
-# ##############################################################################
+################################################
+#               WM CONTROLS                    #
+################################################
 
 # make sxhkd reload its configuration files:
 alt + shift + r
@@ -9,6 +9,7 @@ alt + shift + r
 #
 # bspwm hotkeys
 #
+
 # quit/restart bspwm
 alt + r
 	bspc wm -r && dunstify -r 500 "BSPWM" "bspwm reloaded"
@@ -18,29 +19,60 @@ alt + r
     bspc quit
 
 # lockscreen
-super + shift + l
+super + alt + l
     betterlockscreen -l dimblur
 
 # Kill the focused window
 super + {w,q}
     bspc node -{c,k}
 
-# Focus next/prev window
-super + {_,shift + }f
-    bspc node -f {next,prev}.local.!hidden.window
+# alternate between the tiled and monocle layout
+alt + m
+	bspc desktop -l next
+
+# swap the current node and the biggest node
+alt + g
+	bspc node -s biggest.local
 
 # Fullscreen window with gaps
 alt + f
     sh $HOME/.local/bin/tglbar
 
-# Move the focused window
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+#
+# state/flags
+#
 
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+alt + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous node in the current desktop
+alt + {_,shift + }n
+    bspc node -f {next,prev}.local.!hidden.window
+
+# focus the last desktop
+alt + Tab
+	bspc desktop -f last.occupied && bspc node -f newest.local.!floating
 
 # Move to or send window to workspace #
 super + {_,shift + }{1-8}
 	bspc {desktop -f,node -d} '^{1-8}'
+
+#
+# move/resize
+#
 
 # expand a window by moving one of its side outward
 alt + {h,j,k,l}
@@ -50,9 +82,9 @@ alt + {h,j,k,l}
 alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# Set window state
-super + {alt + t,shift + t,shift + f,alt + f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# move a floating window
+alt + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Add focused window to a tabbed instance
 super + t; {h,j,k,l}
@@ -72,31 +104,6 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
-# Start alacritty
-super + Return
-    alacritty 
-
-# Open application menu
-super + space 
-   sh $HOME/.config/rofi/launcher.sh 
-
-# Toggle eww dashboard
-super + p
-    sh $HOME/.local/bin/dshbrd
-
-# Screenshot
-# Save to local storage
-Print
-    DATE=$(date '+%b%d-%H-%M.png'); \
-    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
-    sh ~/.local/bin/viewscr ~/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
-
-# Upload to CDN
-super + Print
-    DATE=$(date '+%b%d-%H-%M.png'); \
-    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
-    sh ~/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE
-
 ################################################
 #               MEDIA KEYS                     #
 ################################################
@@ -114,19 +121,47 @@ XF86AudioPlay
 	playerctl play-pause
 
 # Manage volume
-F6 
-    amixer -q set Master 5%+ ; ~/.config/polybar/scripts/volume.sh
+F5 
+    amixer -q set Master 5%+ ; #~/.config/polybar/scripts/volume.sh
 
-F5
-    amixer -q set Master 5%- ; ~/.config/polybar/scripts/volume.sh
+F6
+    amixer -q set Master 5%- ; #~/.config/polybar/scripts/volume.sh
 
-f7
-    amixer set Master toggle ; ~/.config/polybar/scripts/volume.sh
+f4
+    amixer set Master toggle ; #~/.config/polybar/scripts/volume.sh
 
 # Manage brightness
 super + F12
-    brightnessctl set 3%+ ; ~/.config/polybar/scripts/volume.sh
+    brightnessctl set 3%+ ; #~/.config/polybar/scripts/volume.sh
    
 super + F11
-    brightnessctl set 3%- ; ~/.config/polybar/scripts/volume.sh
-   
+    brightnessctl set 3%- ; #~/.config/polybar/scripts/volume.sh
+
+################################################
+#              APPLICATIONS                    #
+################################################
+
+# alacritty
+super + Return
+    alacritty 
+
+# Launcher
+super + space 
+   sh $HOME/.config/rofi/launcher.sh 
+
+# Toggle eww dashboard
+alt + d
+    sh $HOME/.local/bin/dshbrd
+
+# Screenshot
+# Save to local storage
+Print
+    DATE=$(date '+%b%d-%H-%M.png'); \
+    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    sh ~/.local/bin/viewscr ~/Pictures/Screenshots/$DATE | xclip -selection clipboard -t image/png
+
+# Upload to CDN
+super + Print
+    DATE=$(date '+%b%d-%H-%M.png'); \
+    maim --select "$HOME/Pictures/Screenshots/$DATE"; \
+    sh ~/.local/bin/upldscr $HOME/Pictures/Screenshots/$DATE

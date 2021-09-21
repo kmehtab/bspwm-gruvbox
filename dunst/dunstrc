@@ -159,4 +159,10 @@
     timeout = 9
 
 [log_notifs]
-    script = /home/kizu/.local/bin/lognotif
+    script = $HOME/.local/bin/lognotif
+
+[notification-panel]
+  appname = "*"
+  summary = "*"
+  urgency = ""
+  script = "~/.local/scripts/save_notification.py"

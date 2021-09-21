@@ -1,0 +1,8 @@
+(defwidget system-menu[]
+  (box
+    :class "system-menu"
+    (button :onclick "systemctl poweroff" :class "system-menu-icon" :cursor "pointer" "󰤆")
+    (button :onclick "systemctl reboot" :class "system-menu-icon" :cursor "pointer" "󰓦")
+    (button :onclick "$HOME/.local/scripts/lockscreen.sh" :class "system-menu-icon" :cursor "pointer" "󰍁")
+    (button :onclick "$HOME/.local/scripts/lockscreen.sh & sleep 3 && systemctl suspend" :timeout "10s" :class "system-menu-icon" :cursor "pointer" "⏾︁")
+    (button :onclick "bspc quit" :class "system-menu-icon" :cursor "pointer" "󰿅")))
