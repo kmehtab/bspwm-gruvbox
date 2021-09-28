@@ -67,8 +67,8 @@ alt + Tab
 	bspc desktop -f last.occupied && bspc node -f newest.local.!floating
 
 # Move to or send window to workspace #
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # move/resize
@@ -122,20 +122,20 @@ XF86AudioPlay
 
 # Manage volume
 F5 
-    amixer -q set Master 5%+ ; #~/.config/polybar/scripts/volume.sh
+    amixer -q set Master 5%+ ; ~/.config/polybar/scripts/volume.sh
 
 F6
-    amixer -q set Master 5%- ; #~/.config/polybar/scripts/volume.sh
+    amixer -q set Master 5%- ; ~/.config/polybar/scripts/volume.sh
 
 f4
-    amixer set Master toggle ; #~/.config/polybar/scripts/volume.sh
+    amixer set Master toggle ; ~/.config/polybar/scripts/volume.sh
 
 # Manage brightness
 super + F12
-    brightnessctl set 3%+ ; #~/.config/polybar/scripts/volume.sh
+    brightnessctl set 3%+ ; ~/.config/polybar/scripts/volume.sh
    
 super + F11
-    brightnessctl set 3%- ; #~/.config/polybar/scripts/volume.sh
+    brightnessctl set 3%- ; ~/.config/polybar/scripts/volume.sh
 
 ################################################
 #              APPLICATIONS                    #
@@ -148,6 +148,17 @@ super + Return
 # Launcher
 super + space 
    sh $HOME/.config/rofi/launcher.sh 
+
+super + d
+   sh $HOME/.config/polybar/scripts/search.sh 
+
+super + p
+		rofi-pass
+
+super + c 
+	clipmenu
+# super + c
+	# clipmenu -b -y 7 -x 180 -i -h 46 -w 500 -sb "#111111" -nb "#dae1ec" -nf "#000000" -fn "BreezeSans-14" -o 0.7
 
 # Toggle eww dashboard
 alt + d

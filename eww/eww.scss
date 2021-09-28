@@ -18,6 +18,10 @@ window {
   background-color: transparent;
 }
 
+button:hover {
+    color: #fbf1c7;
+}
+
 .settings-panel {
   background-color: $background-dark;
 }
@@ -28,6 +32,7 @@ window {
 
 .daily-date {
   background-color: $background;
+  color: #a89984;
   padding: 10px 20px;
 }
 
@@ -37,6 +42,7 @@ window {
 
 .daily-weather {
   background-color: $background;
+  color: #a89984;
   margin: 0 0 0 10px;
   padding: 10px 35px;
 }
@@ -44,6 +50,7 @@ window {
 
 .volume {
   background-color: $background;
+  color: #a89984;
   margin: 10px;
 }
 
@@ -61,6 +68,7 @@ window {
 
 .brightness {
   background-color: $background;
+  color: #a89984;
   margin: 10px;
 }
 
@@ -89,6 +97,7 @@ window {
 
 .spotify-text {
   margin-left: 10px;
+  color: #a89984;
 }
 
 .spotify-controls button {
@@ -112,11 +121,10 @@ window {
 
 .system-menu-icon {
   all: unset;
-  font-family: "Material Design Icons Desktop";
-  font-size: 20px;
   font-weight: bold;
   background-color: transparent;
   border-radius: inherit;
+  color: #a89984;
 }
 
 

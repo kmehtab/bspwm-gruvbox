@@ -1,5 +1,5 @@
 configuration {
-	font:						      "Noto Sans 11";	
+    font: 							"FiraCode Nerd Font 11";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -14,7 +14,7 @@ configuration {
     background:                     #1D202188;
     background-alt:              	#00000000;
     background-bar:                 #f2f2f215;
-    foreground:                     #f2f2f2EE;
+    foreground:                     #fbf1c7EE;
     accent:			            	#3DAEE966;
 }
 

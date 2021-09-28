@@ -9,7 +9,6 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Credits to 6gk/polka
 rule() { bspc rule -a "$@" & }
 config() { bspc config "$@" & }
-
 # ##############################################################################
 # #                                AUTOSTART APPS                              #
 # ##############################################################################
@@ -19,10 +18,10 @@ $HOME/.local/bin/mpd-discord-rpc &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --experimental-backends --backend glx -b &
 xiccd &
-#feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper"
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nitrogen --restore
 sh $HOME/.config/polybar/launch.sh
+#launch.sh
 
 xset r rate 250 40
 
@@ -59,19 +58,19 @@ outer='0x928374'   # outer
 inner1='0x4F4A47'  # focused
 inner2='0x282828'  # normal
 
-targets() {
- 	case $1 in
-		focused) bspc query -N -n .local.focused.\!fullscreen;;
-		normal)  bspc query -N -n .local.\!focused.\!fullscreen
-	esac | grep -iv "$v"
-}
+# targets() {
+ 	# case $1 in
+		# focused) bspc query -N -n .local.focused.\!fullscreen;;
+		# normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	# esac | grep -iv "$v"
+# }
 
-draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
+# draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
 
-initial draw, and then subscribe to events
-{ echo; bspc subscribe node_geometry node_focus; } |
- 	while read -r _; do
-		[ "$v" ] || v='abcdefg'
-		inner=$inner1 draw "$(targets focused)"
-		inner=$inner2 draw "$(targets normal)"
-    done
+# initial draw, and then subscribe to events
+# { echo; bspc subscribe node_geometry node_focus; } |
+ 	# while read -r _; do
+		# [ "$v" ] || v='abcdefg'
+		# inner=$inner1 draw "$(targets focused)"
+		# inner=$inner2 draw "$(targets normal)"
+    # done
