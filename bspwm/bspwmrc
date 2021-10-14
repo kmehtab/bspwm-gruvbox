@@ -50,26 +50,27 @@ config gapless_monocle              true
 bspc config focus_follows_pointer 	true
 bspc config pointer_follows_focus 	true
 
-#emacs start in tilted
+#emacs start in tiled
 bspc rule -a Emacs state=tiled
+bspc rule -a mpv desktop='^3' follow=on state=tiled
 
-outer='0x1d2021'   # outer
-inner1='0x4F4A47'  # focused
-inner2='0x282828'  # normal
+# outer='0x1d2021'   # outer
+# inner1='0x4F4A47'  # focused
+# inner2='0x282828'  # normal
 
-targets() {
- 	case $1 in
-		focused) bspc query -N -n .local.focused.\!fullscreen;;
-		normal)  bspc query -N -n .local.\!focused.\!fullscreen
-	esac | grep -iv "$v"
-}
+# targets() {
+ 	# case $1 in
+		# focused) bspc query -N -n .local.focused.\!fullscreen;;
+		# normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	# esac | grep -iv "$v"
+# }
 
-draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
+# draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
 
-initial draw, and then subscribe to events
-{ echo; bspc subscribe node_geometry node_focus; } |
- 	while read -r _; do
-		[ "$v" ] || v='abcdefg'
-		inner=$inner1 draw "$(targets focused)"
-		inner=$inner2 draw "$(targets normal)"
-    done
+# initial draw, and then subscribe to events
+# { echo; bspc subscribe node_geometry node_focus; } |
+ 	# while read -r _; do
+		# [ "$v" ] || v='abcdefg'
+		# inner=$inner1 draw "$(targets focused)"
+		# inner=$inner2 draw "$(targets normal)"
+    # done
