@@ -40,7 +40,7 @@ rule code                           desktop=^3
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 config border_width                 1
-config window_gap                   5
+config window_gap                   3
 
 config top_padding                  34
 config bottom_padding               0
@@ -58,19 +58,19 @@ outer='0x928374'   # outer
 inner1='0x4F4A47'  # focused
 inner2='0x282828'  # normal
 
-# targets() {
- 	# case $1 in
-		# focused) bspc query -N -n .local.focused.\!fullscreen;;
-		# normal)  bspc query -N -n .local.\!focused.\!fullscreen
-	# esac | grep -iv "$v"
-# }
+targets() {
+ 	case $1 in
+		focused) bspc query -N -n .local.focused.\!fullscreen;;
+		normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	esac | grep -iv "$v"
+}
 
-# draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
+draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $* |:; }
 
-# initial draw, and then subscribe to events
-# { echo; bspc subscribe node_geometry node_focus; } |
- 	# while read -r _; do
-		# [ "$v" ] || v='abcdefg'
-		# inner=$inner1 draw "$(targets focused)"
-		# inner=$inner2 draw "$(targets normal)"
-    # done
+initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+ 	while read -r _; do
+		[ "$v" ] || v='abcdefg'
+		inner=$inner1 draw "$(targets focused)"
+		inner=$inner2 draw "$(targets normal)"
+    done

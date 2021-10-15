@@ -6,7 +6,7 @@
 
 (defwindow settings-panel
   :monitor 0
-  :geometry (geometry :x "-1%"
+  :geometry (geometry :x "-8px"
             :y "40px"
             ; :width "30%"
             ; :height "30px"

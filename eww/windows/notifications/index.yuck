@@ -3,8 +3,8 @@
 
 (defwindow notifications
   :monitor 0
-  :geometry (geometry :x "-1%"
-            :y "7%"
+  :geometry (geometry :x "-8px"
+            :y "40px"
             ; :width "25%"
             :anchor "top right")
   :stacking "fg"

@@ -145,9 +145,16 @@ super + F11
 super + Return
     alacritty 
 
-# Launcher
+# emacs
+super + shift + Return
+    emacs 
+
+# launcher
 super + space 
    sh $HOME/.config/rofi/launcher.sh 
+
+super + shift + f
+  firefox
 
 super + d
    sh $HOME/.config/polybar/scripts/search.sh 

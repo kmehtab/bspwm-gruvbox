@@ -46,7 +46,7 @@ monitor = ${env:MONITOR}
 width = 99.4%
 height = 30
 offset-x = 0.3%
-offset-y = 4
+offset-y = 3
 radius = 0
 fixed-center = true
 bottom = false
@@ -72,7 +72,7 @@ border-size = 0
 ;border-bottom-size = 25
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 5
 
 module-margin-left = 3
@@ -87,7 +87,7 @@ font-3 = "Material Design Icons Desktop:pixelsize=10;2"
 
 modules-left = bspwm mpd
 modules-center = xwindow 
-modules-right = date pulseaudio-control wired-network networkspeeddown networkspeedup panel notifications
+modules-right = date pulseaudio-control wired-network networkspeeddown networkspeedup panel notifications tray
 
 tray-detached = true
 tray-offset-x = -5
